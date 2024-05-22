@@ -1,4 +1,4 @@
-# Web-crawler-sHELL-
+# Web-crawler-SHELL
 The script takes an argument a list of URLs to web pages. The script downloads all images into the current directory, unless a file with identical name as the image already exists.
 <h1 align="center">Shell Project</h1>
 <ul>
