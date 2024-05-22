@@ -8,5 +8,6 @@ Outputs whether the image was downloaded or if the download failed.</li>
     <li>process_page function: Fetches the content of the web page using curl.
 Extracts image URLs using grep with a Perl-compatible regular expression (-oP).
 Iterates over each image URL and calls download_image in the background (&).</li>
+    <li>Run the script with a list of URLs as arguments: ./download_images.sh http://xyz.com/page1 http://xyz.com/page2</li>
     <li>📫 Reach out to me directly at <a href="sofiyansaboor@gmail.com">My Email</a>.</li>
 </ul>
