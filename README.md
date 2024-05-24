@@ -11,6 +11,7 @@ The script takes an argument a list of URLs to web pages. The script downloads a
 </ul>
 <h2 align="center">Objectives/ Advantages / Scope of the project 🌟</h2>
 <ul>
+    <li>I discovered another efficient approach which help to scrap webpages without creating a tempo/Arbitrary file, which will directly extract images, And in the non availablility of images it will download the whole webpage for inspection</li>
     <li>HTTRACK lets you download webpages in your local directory with indexing each webpage separately, which is time-consuming when you want to download a single webpage with working functions.</li>
     <li>This shell script advantageously downloads the webpage with minimal time consumption in a single index.html file! 🚀</li>
 </ul>
