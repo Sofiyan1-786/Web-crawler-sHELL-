@@ -17,6 +17,6 @@ The script takes an argument a list of URLs to web pages. The script downloads a
 </ul>
 <h2 align="center">Project Execution 🛠️</h2>
 <ul>
-    <li>Run the script with a list of URLs as arguments: <code>./SCRAPE-IMG\&\HTML.sh "http://xyz.com/page1" "http://xyz.com/page2"</code></li>
+    <li>Run the script with a list of URLs as arguments: <code>./main.sh "http://xyz.com/page1" "http://xyz.com/page2"</code></li>
     <li>📫 Reach out to me directly at <a href="mailto:sofiyansaboor@gmail.com">My Email</a>.</li>
 </ul>
