@@ -2,7 +2,7 @@
 
 urls=("http://utagechildcare.com" "http://unicusdiagnostics.com")
 max_jobs=1000
-counter=0 # Counter for the number of jobs currently running.
+counter=0 
 
 for url in "${urls[@]}"; do
     wget -O Arbitrary.html "$url" &>/dev/null
@@ -17,7 +17,7 @@ for url in "${urls[@]}"; do
             wget "$img_url" -O "$img_name" &>/dev/null &
             echo "File $img_name DNE - downloading it..."
             ((counter++))
-            #ADDITION FROM HERE MADE HERE: Wait for jobs to complete if max_jobs limit is reached
+            #FEW ADDITION FROM HERE MADE HERE: Wait for jobs to complete if max_jobs limit is reached
             if (( counter >= max_jobs )); then
                 wait
                 counter=0
