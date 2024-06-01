@@ -19,8 +19,8 @@ for url in "${urls[@]}"; do
             ((counter++))
             #FEW ADDITION FROM HERE MADE HERE: Wait for jobs to complete if max_jobs limit is reached
             if (( counter >= max_jobs )); then
-                wait
-                counter=0
+                  wait -n
+                 ((counter--))
             fi
             echo "SUCCESSFULLY DOWNLOADED THE IMAGE $img_name!"
         else
