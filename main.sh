@@ -1,9 +1,10 @@
 #!/bin/bash
 
 urls=("http://utagechildcare.com" "http://unicusdiagnostics.com")
-max_jobs=1000
+max_jobs=2
 counter=0
 file_count=0
+
 
 for url in "${urls[@]}"; do
   wget -O "file$file_count.html" "$url" &>/dev/null
@@ -14,9 +15,6 @@ for ((i=0;i<file_count;i++)); do
   echo "file$i.html"
   grep_output=$(grep -o '<img[^>]*src="[^"]*"' file$i.html)
 
-  echo $grep_output
-
-  #sleep 100
     for img_tag in $grep_output; do
 
         if [ "$img_tag" = "<img" ] ; then
@@ -31,11 +29,13 @@ for ((i=0;i<file_count;i++)); do
             #if it doesnt exists then it downloads
             wget "$img_url" -O "$img_name" &>/dev/null &
             echo "File $img_name DNE - downloading it..."
-            ((counter++))
+
+            concurrent_downloads=`jobs -p|wc -w`
+
             #FEW ADDITION FROM HERE MADE HERE: Wait for jobs to complete if max_jobs limit is reached
-            if (( counter >= max_jobs )); then
-                  wait -n
-                 ((counter--))
+            if (( concurrent_downloads >= max_jobs )); then
+              echo "concurrent download reached its limit. waiting for at least one to finish."
+              wait -n
             fi
             echo "SUCCESSFULLY DOWNLOADED THE IMAGE $img_name!"
         else
